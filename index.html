@@ -3,9 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home-Rishu</title>
+    <title>Portfolio - Home</title>
+    <style>
+        :root {
+            --bg-color: hsl(0, 0%, 12%);
+            --main-hero: #ff0000;
+            --side-hero: hsl(268, 100%, 74%);
+            --text-color: #f0f0f0;
+            --card-bg: #1e1e1e;
+            --nav-bg: #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: var(--main-hero);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: white;
+            color: var(--main-hero);
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--side-hero);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--side-hero);
+            color: var(--bg-color);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: var(--nav-bg);
+            color: #888;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            border-top: 3px solid var(--side-hero);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">DevPortfolio</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span style="color: var(--main-hero);">Rishu</span>.<br>Welcome to my <span>Portfolio</span>.</h1>
+            <p>A passionate Front-End Developer developing modern and responsive websites.</p>
+            <a href="skills.html" class="cta-btn">See my SKILLS</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Student Portfolio. Designed with HTML & CSS.</p>
+    </footer>
+
 </body>
 </html>

@@ -3,9 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills-Rishu</title>
+    <title>Portfolio - Skills & Projects</title>
+    <style>
+        :root {
+            --bg-color: hsl(0, 0%, 12%);
+            --main-hero: #ff0000;
+            --side-hero: hsl(268, 100%, 74%);
+            --text-color: #f0f0f0;
+            --card-bg: #1e1e1e;
+            --nav-bg: #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: var(--main-hero);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: white;
+            color: var(--main-hero);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--side-hero);
+            display: inline-block;
+            border-bottom: 3px solid var(--main-hero);
+            padding-bottom: 10px;
+        }
+
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 2rem;
+            flex: 1 1 300px;
+            max-width: 350px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--main-hero);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+            border-top-color: var(--side-hero);
+        }
+
+        .card h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: #aaa;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--side-hero);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: auto;
+        }
+
+        footer {
+            background-color: var(--nav-bg);
+            color: #888;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            border-top: 3px solid var(--side-hero);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">DevPortfolio</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section-header">
+            <h2>My Skills & Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <p>A personal portfolio website created using HTML5 and CSS3. Features a fully responsive design, flexbox layout, and CSS variables for theming.</p>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+            </div>
+
+            <div class="card">
+                <h3>E-Commerce Website</h3>
+                <p>A front-end website for an online store. Includes product cards, navigation, and a shopping cart layout designed with grid.</p>
+                <span class="tech-tag">Flexbox</span>
+                <span class="tech-tag">Responsive</span>
+            </div>
+
+            <div class="card">
+                <h3>To-Do list</h3>
+                <p>A Webpage which has a dynamic layout of todo list from where you can add, delete and also can edit the text in the list text area. </p>
+                <span class="tech-tag">UI Design</span>
+                <span class="tech-tag">Layout</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Student Portfolio. Designed with HTML & CSS.</p>
+    </footer>
+
 </body>
 </html>
